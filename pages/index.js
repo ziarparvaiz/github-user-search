@@ -1,7 +1,10 @@
+import Layout from "@/components/layout";
+import DevCard from "@/components/DevCard";
+
 export default function Home() {
   return (
-    <div>
-      <h3>Hello World!</h3>
-    </div>
+    <Layout title="GitHub User Finder" description="dfwfe">
+      <DevCard />
+    </Layout>
   );
 }
