@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@layer base {
+  html,
+  body,
+  #__next {
+    /* font-family: "Poppins", sans-serif; */
+    font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Noto Sans",
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    @apply h-full bg-dark text-white;
+  }
+}
+
+@layer components {
+  .center {
+    @apply flex justify-between flex-col;
+    /* @apply flex justify-between items-center flex-col; */
+  }
+}
