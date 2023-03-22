@@ -1,8 +1,18 @@
-function Avatar() {
+import Image from "next/image";
+
+function Avatar({ width, height }) {
+  const AvatarImg = "https://avatars.githubusercontent.com/u/50423368?v=4";
+
   return (
-    <div>
-      <h3>Avatar</h3>
-    </div>
+    <>
+      <Image
+        className="object-contain rounded-full"
+        src={AvatarImg}
+        alt="avatart"
+        width={width}
+        height={height}
+      />
+    </>
   );
 }
 
