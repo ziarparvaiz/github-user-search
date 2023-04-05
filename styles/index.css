@@ -11,7 +11,7 @@
     /* font-family: "Poppins", sans-serif; */
     font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Noto Sans",
       Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    @apply h-full bg-dark text-white;
+    @apply h-full bg-black text-white;
   }
 }
 
