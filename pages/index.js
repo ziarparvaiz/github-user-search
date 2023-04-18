@@ -1,10 +1,10 @@
 import Layout from "@/components/layout";
-import DevCard from "@/components/DevCard";
+import Search from "@/components/Search";
 
 export default function Home() {
   return (
     <Layout title="GitHub User Finder" description="dfwfe">
-      <DevCard />
+      <Search />
     </Layout>
   );
 }

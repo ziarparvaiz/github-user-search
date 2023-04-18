@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Footer from "../global/Footer";
 import Header from "../global/Header";
-import Container from "./Container";
 
 function Layout({ children, title, description }) {
   return (
@@ -12,11 +11,11 @@ function Layout({ children, title, description }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container className="center h-full">
+      <div className="flex item-center flex-col justify-between h-[100vh]">
         <Header />
         {children}
         <Footer />
-      </Container>
+      </div>
     </>
   );
 }
