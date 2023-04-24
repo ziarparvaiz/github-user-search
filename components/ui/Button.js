@@ -1,45 +1,45 @@
-import Link from "next/link";
-import classNames from "classnames";
+import * as React from "react";
+import { cva } from "class-variance-authority";
 
-function Button({
-  children,
-  type,
-  href,
-  color = "default",
-  border,
-  size,
-  ...props
-}) {
-  const BtnComponent = href ? Link : "button";
-  const buttonType = href ? undefined : type || "button";
+import { cn } from "@/lib/utils";
 
+const buttonVariants = cva(
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        primary: "bg-primary text-white hover:bg-primary-foreground",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "underline-offset-4 hover:underline text-white",
+      },
+      size: {
+        default: "h-10 py-2 px-4",
+        sm: "h-9 px-3 rounded-md",
+        lg: "h-11 px-8 rounded-md",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+const Button = ({ className, variant, size, ...props }) => {
   return (
-    <BtnComponent
-      href={href}
-      type={buttonType}
+    <button
+      className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-      className={classNames(
-        {
-          "text-[16px] lg:text-[18px] px-4 flex gap-2 h-[40px] md:h-[45px] items-center justify-center font-normal rounded-[3px] transition duration-300 ease-in-out": true,
-          "bg-transparent text-white": color === "default",
-          "bg-success hover:bg-success-200 text-dark": color === "success",
-          "bg-dark  text-white": color === "dark",
-          "bg-primary hover:bg-primary-200 text-white": color === "primary",
-          "border-[1px] border-primary text-primary":
-            color === "primary-border",
-          "bg-white text-dark": color === "light",
-          "bg-danger text-white": color === "danger",
-          "bg-warning text-white": color === "warning",
-          "bg-info text-white": color === "info",
-          "border-[1px] border-white": border === "border",
-          "h-[50px] px-[21px]": size === "md",
-        },
-        props.className
-      )}
-    >
-      {children}
-    </BtnComponent>
+    />
   );
-}
+};
+Button.displayName = "Button";
 
-export default Button;
+export { Button, buttonVariants };

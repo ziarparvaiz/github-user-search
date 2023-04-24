@@ -1,5 +1,5 @@
 import Layout from "@/components/layout";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 
 function NotFound() {
   return (
@@ -14,9 +14,10 @@ function NotFound() {
             Sorry, we couldn’t find the page you’re looking for.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button href="/" color="danger">
+            {/* <Button href="/" color="danger">
               Go Back Home
-            </Button>
+            </Button> */}
+            <Button variant="destructive">Go Back Home</Button>
           </div>
         </div>
       </main>

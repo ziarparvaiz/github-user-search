@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Container from "./layout/Container";
 import Card from "./ui/Card";
 import { FiSearch } from "react-icons/fi";
-import Button from "./ui/Button";
+import { Button } from "./ui/Button";
 
 function Search() {
   const [username, setUsername] = useState("");
@@ -26,13 +26,7 @@ function Search() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <Button
-            className="!rounded-[15px] !text-[16px]"
-            type="submit"
-            color="primary"
-          >
-            Search
-          </Button>
+          <Button type="submit" variant="primary">Search</Button>
         </Card>
       </form>
     </Container>

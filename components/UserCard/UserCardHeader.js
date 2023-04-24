@@ -13,16 +13,10 @@ function UserCardHeader({
   email,
   org,
 }) {
-
   return (
     <div className="flex justify-between items-start">
       <div className="flex gap-5 items-center">
-        <Avatar
-          src={avatar}
-          alt={username}
-          width={120}
-          height={120}
-        />
+        <Avatar src={avatar} alt={username} width={120} height={120} />
         <div className="flex flex-col">
           <h4 className="text-[33px] font-bold">{fullName}</h4>
           <Link

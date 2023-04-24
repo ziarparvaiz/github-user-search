@@ -5,7 +5,7 @@ import UserCardBody from "./UserCardBody";
 import UserCardFooter from "./UserCardFooter";
 import fileDownload from "js-file-download";
 import domtoimage from "dom-to-image";
-import Button from "../ui/Button";
+import { Button } from "../ui/Button";
 
 function UserCard({
   avatar,
@@ -58,8 +58,8 @@ function UserCard({
         <UserCardFooter hireable={hireable} email={email} />
       </Card>
       <Button
-        className="!text-[14px] !h-[30px] mt-2"
-        color="primary"
+        className="flex items-center gap-2 !text-[14px] !h-[30px] mt-2"
+        variant="primary"
         onClick={handleDownload}
       >
         <HiOutlineDownload /> Download PNG
