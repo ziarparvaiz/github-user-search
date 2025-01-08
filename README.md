@@ -1,1 +1,1 @@
-# GitHub User Search
+### GitHub User Search
